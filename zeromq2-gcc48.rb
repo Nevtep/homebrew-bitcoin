@@ -77,7 +77,7 @@ class Zeromq2Gcc48 < Formula
     end
 
     
-    system "make check" if build.head? else system "make"
+    system "make"
     system "make install"
     system "ldconfig" if build.head?
   end
