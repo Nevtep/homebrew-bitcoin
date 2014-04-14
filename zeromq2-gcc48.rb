@@ -4,6 +4,14 @@ class Zeromq2Gcc48 < Formula
   homepage 'http://www.zeromq.org/'
   url 'http://download.zeromq.org/zeromq-2.2.0.tar.gz'
   sha1 'e4bc024c33d3e62f658640625e061ce4e8bd1ff1'
+  
+  head do
+    url 'https://github.com/zeromq/libzmq.git'
+
+    depends_on 'autoconf'
+    depends_on 'automake'
+    depends_on 'libtool'
+  end
 
   keg_only "Conflicts with zeromq in main repository."
 
@@ -53,7 +61,9 @@ class Zeromq2Gcc48 < Formula
       ENV['OpenPGM_LIBS'] = %x[pkg-config --libs openpgm-5.2].chomp
       args << "--with-system-pgm"
     end
+    system "./autogen.sh" if build.head?
     system "./configure", *args
+    system "make check" if build.head?
   end
 
   def install
@@ -69,6 +79,7 @@ class Zeromq2Gcc48 < Formula
 
     system "make"
     system "make install"
+    system "ldconfig" if build.head?
   end
 
   def caveats; <<-EOS.undent
