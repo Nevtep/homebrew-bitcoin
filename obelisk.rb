@@ -24,7 +24,7 @@ class Obelisk < Formula
     ENV.cxx11
 
 
-    libsodium = Formula.factory('libsodium')
+    libsodium = Formula.factory('Nevtep/bitcoin/libsodium-gcc48')
     ENV.append 'CPPFLAGS', "-I#{libsodium.include}"
     ENV.append 'LDFLAGS', "-L#{libsodium.lib}"
     
