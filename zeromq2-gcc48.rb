@@ -63,7 +63,6 @@ class Zeromq2Gcc48 < Formula
     end
     system "./autogen.sh" if build.head?
     system "./configure", *args
-    system "make check" if build.head?
   end
 
   def install
@@ -77,7 +76,8 @@ class Zeromq2Gcc48 < Formula
       do_config
     end
 
-    system "make"
+    
+    system "make check" if build.head? else system "make"
     system "make install"
     system "ldconfig" if build.head?
   end
