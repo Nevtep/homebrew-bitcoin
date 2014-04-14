@@ -4,7 +4,6 @@ class Sx < Formula
   homepage 'https://github.com/spesmilo/sx'
   url 'https://github.com/spesmilo/sx.git', :tag => "v1.0"
   head 'https://github.com/spesmilo/sx.git', :revision => 'a97f7bead352ac9b4e388a45128a4d7f13bdf75c'
-  version 'dev'
 
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
