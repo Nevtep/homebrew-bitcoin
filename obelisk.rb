@@ -2,8 +2,8 @@ require 'formula'
 
 class Obelisk < Formula
   homepage 'https://github.com/spesmilo/obelisk'
-  url 'https://github.com/spesmilo/obelisk.git', :revision => '58f326dfa471b7fc6e850ae44658b2f9f8333626'
-  head 'https://github.com/spesmilo/obelisk.git', :branch => 'master'
+  url 'https://github.com/spesmilo/obelisk.git', :tag => 'v1.0'
+  head 'https://github.com/spesmilo/obelisk.git', :revision => '58f326dfa471b7fc6e850ae44658b2f9f8333626'
 
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
