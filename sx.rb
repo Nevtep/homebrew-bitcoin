@@ -2,7 +2,7 @@ require 'formula'
 
 class Sx < Formula
   homepage 'https://github.com/spesmilo/sx'
-  url 'https://github.com/spesmilo/sx.git', :tag => 'v1.0'
+  url 'https://github.com/spesmilo/sx.git', :revision => 'a97f7bead352ac9b4e388a45128a4d7f13bdf75c'
   head 'https://github.com/spesmilo/sx.git', :branch => 'master'
 
   depends_on 'autoconf' => :build
