@@ -1,6 +1,6 @@
 require 'formula'
 
-class Libsodium < Formula
+class LibsodiumGcc48 < Formula
   homepage 'https://github.com/jedisct1/libsodium/'
   url 'https://github.com/jedisct1/libsodium/releases/download/0.4.5/libsodium-0.4.5.tar.gz'
   sha256 '7ad5202df53eeac0eb29b064ae5d05b65d82b2fc1c082899c9c6a09b0ee1ac32'
