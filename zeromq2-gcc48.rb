@@ -79,7 +79,6 @@ class Zeromq2Gcc48 < Formula
     
     system "make"
     system "make install"
-    system "ldconfig" if build.head?
   end
 
   def caveats; <<-EOS.undent
