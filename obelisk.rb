@@ -11,6 +11,7 @@ class Obelisk < Formula
   depends_on 'libtool' => :build
   depends_on 'pkg-config' => :build
 
+  depends_on 'libsodium'
   depends_on 'Nevtep/bitcoin/libbitcoin'
   depends_on 'Nevtep/bitcoin/libconfig-gcc48'
   depends_on 'Nevtep/bitcoin/zeromq2-gcc48'
