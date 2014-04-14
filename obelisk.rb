@@ -27,6 +27,8 @@ class Obelisk < Formula
     libsodium = Formula.factory('Nevtep/bitcoin/libsodium-gcc48')
     ENV.append 'CPPFLAGS', "-I#{libsodium.include}"
     ENV.append 'LDFLAGS', "-L#{libsodium.lib}"
+    ENV.append 'libsodium_CFLAGS', "#{libsodium.include}"
+    ENV.append 'libsodium_LIBS', "#{libsodium.lib}/libsodium.dylib"
     
     # I thought depends_on libbitcoin would be enough, but I guess not...
     libbitcoin = Formula.factory('Nevtep/bitcoin/libbitcoin')
