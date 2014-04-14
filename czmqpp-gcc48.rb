@@ -22,8 +22,8 @@ class CzmqppGcc48 < Formula
 
     # I thought depends_on zermoq-gcc48 would be enough, but I guess not...
     czmqgcc48 = Formula['Nevtep/bitcoin/czmq-gcc48']
-    ENV.append 'libczmq_CFLAGS', "-I#{czmqgcc48.include}"
-    ENV.append 'libczmq_LIBS', "-L#{czmqgcc48.lib}"
+    ENV.append 'CPPFLAGS', "-I#{czmqgcc48.include}"
+    ENV.append 'LDFLAGS', "-L#{czmqgcc48.lib}"
 
     system "autoreconf", "-i"
 
@@ -32,7 +32,6 @@ class CzmqppGcc48 < Formula
                           "--sysconfdir=#{etc}"
     system "make"
     system "make", "install"
-    system "ldconfig"
   end
 
   test do
