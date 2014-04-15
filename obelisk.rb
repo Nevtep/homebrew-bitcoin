@@ -49,7 +49,8 @@ class Obelisk < Formula
     system "./configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "--sysconfdir=#{etc}"
-
+    
+    system "make"
     system "make", "install"
   end
 
