@@ -15,13 +15,17 @@ class CzmqGcc48 < Formula
 
   option :universal
 
-  #depends_on 'zeromq'
+  depends_on 'Nevtep/bitcoin/zeromq2-gcc48'
 
   def install
     ENV.prepend_path 'PATH', "#{HOMEBREW_PREFIX}/opt/gcc48/bin"
     ENV['CC'] = "gcc-4.8"
     ENV['CXX'] = ENV['LD'] = "g++-4.8"
 
+    zeromq = Formula['Nevtep/bitcoin/zeromq2-gcc48']
+    ENV.append 'CPPFLAGS', "-I#{zeromq.include}"
+    ENV.append 'LDFLAGS', "-L#{zeromq.lib}"
+    
     ENV.universal_binary if build.universal?
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
